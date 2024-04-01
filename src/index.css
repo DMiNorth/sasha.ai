@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+body{
+    background-color: #060606;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* ширина scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #8AFF2F;    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+}
+
+#point-card:after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    right: -0.2rem;
+    top: -0.2rem;
+    background-color: #8AFF2F;
+}
+
+
+
+a[target="_blank"]::after {
+    content: "";
+    width: 5rem;
+    height: 5rem;
+    background: url('public/phone.svg') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: text-bottom;
+    pointer-events: none;
+}
+
+a[target="_blank1"]::after {
+    content: "";
+    width: 5rem;
+    height: 5rem;
+    background: url('public/roket.svg') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: text-bottom;
+    pointer-events: none;
+}
+
+.pulse::after,
+.pulse::before {
+    content: '';
+    position: absolute;
+    border: 2px solid white;
+    left: 140px;
+    opacity: 0;
+    right: 140px;
+    top: -40px;
+    bottom: -40px;
+    border-radius: 100%;
+    animation: pulse 2.5s linear infinite;
+    z-index: -1;
+}
+
+.pulse::after {
+    animation-delay: 1.25s;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+#navbarText li{
+    margin-bottom: 0.5rem;
+}
